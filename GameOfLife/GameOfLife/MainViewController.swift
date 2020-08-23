@@ -20,6 +20,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var rateOfPlaySlider: UISlider!
     @IBOutlet weak var startStopButton: UIButton!
     @IBOutlet weak var rulesButton: UIButton!
+    @IBOutlet weak var switch: UISwitch!
+    @IBOutlet weak var stepper: UIStepper!
     
     // MARK: - Views
     
@@ -37,7 +39,10 @@ class MainViewController: UIViewController {
     @IBAction func startStopButtonTapped(_ sender: Any) {
     }
     
-    @IBAction func rulesButtonTapped(_ sender: Any) {
+    @IBAction func stepperIncremented(_ sender: Any) {
+    }
+    
+    @IBAction func switchToggled(_ sender: Any) {
     }
     
     // MARK: - Navigation

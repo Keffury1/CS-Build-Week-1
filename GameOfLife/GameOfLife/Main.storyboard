@@ -50,24 +50,13 @@
                                 </cells>
                             </collectionView>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="E6Y-4g-rg6">
-                                <rect key="frame" x="18" y="601" width="388" height="31"/>
+                                <rect key="frame" x="18" y="621" width="223" height="31"/>
                                 <connections>
                                     <action selector="rateOfPlayChanged:" destination="cox-pS-mD9" eventType="valueChanged" id="bfI-Xx-vs7"/>
                                 </connections>
                             </slider>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvs-YL-BoH">
-                                <rect key="frame" x="342" y="89.5" width="49" height="31"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="jcG-jS-ceT"/>
-                                    <constraint firstAttribute="width" constant="47" id="ou1-Zo-Vrt"/>
-                                </constraints>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="onTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </switch>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="64s-gJ-76m">
-                                <rect key="frame" x="20" y="681" width="374" height="100"/>
+                                <rect key="frame" x="20" y="712" width="374" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BD1-y5-ppo">
                                         <rect key="frame" x="0.0" y="0.5" width="111.5" height="99"/>
@@ -100,22 +89,45 @@
                                     <constraint firstAttribute="height" constant="100" id="nTk-DQ-QfS"/>
                                 </constraints>
                             </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yvs-YL-BoH">
+                                <rect key="frame" x="342" y="89.5" width="49" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="jcG-jS-ceT"/>
+                                    <constraint firstAttribute="width" constant="47" id="ou1-Zo-Vrt"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="onTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="switchToggled:" destination="cox-pS-mD9" eventType="valueChanged" id="ZvO-gz-7M2"/>
+                                </connections>
+                            </switch>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="e5t-Wd-ENJ">
+                                <rect key="frame" x="295" y="620" width="94" height="32"/>
+                                <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="stepperIncremented:" destination="cox-pS-mD9" eventType="valueChanged" id="aZQ-Cu-REA"/>
+                                </connections>
+                            </stepper>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="m3y-Ic-OZM" firstAttribute="top" secondItem="ghq-9v-4LA" secondAttribute="bottom" constant="8" id="19j-Nw-VfT"/>
-                            <constraint firstItem="E6Y-4g-rg6" firstAttribute="top" secondItem="m3y-Ic-OZM" secondAttribute="bottom" constant="40" id="1si-2D-C1Z"/>
+                            <constraint firstItem="E6Y-4g-rg6" firstAttribute="top" secondItem="m3y-Ic-OZM" secondAttribute="bottom" constant="60" id="1si-2D-C1Z"/>
                             <constraint firstItem="cDu-Bq-vqS" firstAttribute="trailing" secondItem="Yvs-YL-BoH" secondAttribute="trailing" constant="25" id="4Oi-Hr-l3s"/>
+                            <constraint firstItem="cDu-Bq-vqS" firstAttribute="bottom" secondItem="64s-gJ-76m" secondAttribute="bottom" constant="50" id="7yq-jL-Lna"/>
                             <constraint firstItem="GBM-ov-b1z" firstAttribute="leading" secondItem="cDu-Bq-vqS" secondAttribute="leading" constant="20" id="Cop-i8-mev"/>
                             <constraint firstItem="cDu-Bq-vqS" firstAttribute="trailing" secondItem="64s-gJ-76m" secondAttribute="trailing" constant="20" id="D07-7G-k5a"/>
+                            <constraint firstItem="cDu-Bq-vqS" firstAttribute="trailing" secondItem="e5t-Wd-ENJ" secondAttribute="trailing" constant="25" id="GEC-6Z-NXH"/>
                             <constraint firstItem="64s-gJ-76m" firstAttribute="leading" secondItem="cDu-Bq-vqS" secondAttribute="leading" constant="20" id="Hq9-dr-Ggm"/>
                             <constraint firstItem="GBM-ov-b1z" firstAttribute="top" secondItem="cDu-Bq-vqS" secondAttribute="top" constant="20" id="MtJ-LG-3ai"/>
                             <constraint firstItem="cDu-Bq-vqS" firstAttribute="trailing" secondItem="m3y-Ic-OZM" secondAttribute="trailing" constant="20" id="PKN-YP-7Rh"/>
                             <constraint firstItem="E6Y-4g-rg6" firstAttribute="leading" secondItem="cDu-Bq-vqS" secondAttribute="leading" constant="20" id="Sdx-Rx-Zb1"/>
                             <constraint firstItem="m3y-Ic-OZM" firstAttribute="leading" secondItem="cDu-Bq-vqS" secondAttribute="leading" constant="20" id="Tpl-pH-pjw"/>
-                            <constraint firstItem="cDu-Bq-vqS" firstAttribute="trailing" secondItem="E6Y-4g-rg6" secondAttribute="trailing" constant="10" id="dix-vj-lXp"/>
+                            <constraint firstItem="cDu-Bq-vqS" firstAttribute="trailing" secondItem="E6Y-4g-rg6" secondAttribute="trailing" constant="175" id="dix-vj-lXp"/>
+                            <constraint firstItem="e5t-Wd-ENJ" firstAttribute="centerY" secondItem="E6Y-4g-rg6" secondAttribute="centerY" id="eYf-c0-Cgu"/>
                             <constraint firstItem="cDu-Bq-vqS" firstAttribute="centerY" secondItem="ghq-9v-4LA" secondAttribute="bottom" id="etx-vX-LhV"/>
-                            <constraint firstItem="64s-gJ-76m" firstAttribute="top" secondItem="E6Y-4g-rg6" secondAttribute="bottom" constant="50" id="f3M-R6-rNH"/>
                             <constraint firstItem="Yvs-YL-BoH" firstAttribute="centerY" secondItem="GBM-ov-b1z" secondAttribute="centerY" id="g0g-Nb-AsW"/>
                             <constraint firstItem="ghq-9v-4LA" firstAttribute="leading" secondItem="cDu-Bq-vqS" secondAttribute="leading" constant="20" id="joM-bF-kVX"/>
                             <constraint firstItem="cDu-Bq-vqS" firstAttribute="trailing" secondItem="ghq-9v-4LA" secondAttribute="trailing" constant="20" id="t3n-bM-4Ev"/>
@@ -131,6 +143,8 @@
                         <outlet property="rateOfPlaySlider" destination="E6Y-4g-rg6" id="dPy-1H-bPq"/>
                         <outlet property="rulesButton" destination="BD1-y5-ppo" id="s1c-CJ-Y63"/>
                         <outlet property="startStopButton" destination="MZS-37-5E4" id="rve-dk-4WO"/>
+                        <outlet property="stepped" destination="e5t-Wd-ENJ" id="eRn-cw-B8R"/>
+                        <outlet property="switch" destination="Yvs-YL-BoH" id="j83-Gf-vgj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IqV-8Z-TgN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
