@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  GameOfLife
+//  GameOfLifeTwo
 //
-//  Created by Bobby Keffury on 8/17/20.
+//  Created by Bobby Keffury on 8/26/20.
 //  Copyright © 2020 Bobby Keffury. All rights reserved.
 //
 

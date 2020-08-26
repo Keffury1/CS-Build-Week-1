@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="GameOfLifeTwo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Generations" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTg-Lu-jwd">
+                                <rect key="frame" x="20" y="74" width="384" height="82"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7T2-Vv-EAF">
+                                <rect key="frame" x="20" y="164" width="374" height="367"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FVo-NQ-RSe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellCell" id="1k9-r8-OWA" customClass="CellCollectionViewCell" customModule="GameOfLifeTwo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gOZ-Ng-JrJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5GM-zg-oWu">
+                                <rect key="frame" x="30" y="767" width="354" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvG-DF-8KG">
+                                        <rect key="frame" x="0.0" y="0.5" width="73.5" height="74"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="info.circle" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="vTk-rM-ZxI" kind="show" identifier="detailSegue" id="NNU-X5-upV"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf6-cr-ieA">
+                                        <rect key="frame" x="93.5" y="0.5" width="73.5" height="74"/>
+                                        <state key="normal" backgroundImage="trash.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="trashButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GOe-3k-nvB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cw-AK-UWY">
+                                        <rect key="frame" x="187" y="0.5" width="73.5" height="74"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="play.circle" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Yo-5q-KbA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ujr-PH-Z7g">
+                                        <rect key="frame" x="280.5" y="0.5" width="73.5" height="74"/>
+                                        <state key="normal" backgroundImage="pause.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="stopButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aSF-Ma-rzx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="DVZ-zc-vAd"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rli-Xz-uSU">
+                                <rect key="frame" x="20" y="551" width="374" height="125"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tm-bS-yFG">
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="125"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="1"/>
+                                        <connections>
+                                            <action selector="presetOneTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qOy-0f-rsx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1f-B0-BWM">
+                                        <rect key="frame" x="96" y="0.0" width="86" height="125"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="2"/>
+                                        <connections>
+                                            <action selector="presetTwoTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3L2-AE-sEs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWb-nN-n2d">
+                                        <rect key="frame" x="192" y="0.0" width="86" height="125"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="3"/>
+                                        <connections>
+                                            <action selector="presetThreeTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y2T-xO-UOG"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iD-dS-JZo">
+                                        <rect key="frame" x="288" y="0.0" width="86" height="125"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="4"/>
+                                        <connections>
+                                            <action selector="presetFourTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zka-E9-Vbk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="d9D-l2-gnj"/>
+                                </constraints>
+                            </stackView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lXS-Ga-jcc">
+                                <rect key="frame" x="20" y="706" width="374" height="32"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <segments>
+                                    <segment title="Slow"/>
+                                    <segment title="Medium"/>
+                                    <segment title="Fast"/>
+                                </segments>
+                                <color key="selectedSegmentTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="rateOfPlayChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="hSR-uF-PA5"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7T2-Vv-EAF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7LS-99-sOj"/>
+                            <constraint firstItem="lXS-Ga-jcc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="8xV-hU-ajJ"/>
+                            <constraint firstItem="lXS-Ga-jcc" firstAttribute="top" secondItem="kWb-nN-n2d" secondAttribute="bottom" constant="30" id="DEd-P4-MUW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rli-Xz-uSU" secondAttribute="trailing" constant="20" id="EAD-im-qLG"/>
+                            <constraint firstItem="7T2-Vv-EAF" firstAttribute="top" secondItem="eTg-Lu-jwd" secondAttribute="bottom" constant="8" id="IFf-VC-S8k"/>
+                            <constraint firstItem="Rli-Xz-uSU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PVQ-zn-j5f"/>
+                            <constraint firstItem="5GM-zg-oWu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="UFA-VY-awZ"/>
+                            <constraint firstItem="eTg-Lu-jwd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="V5g-3Z-Zw0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7T2-Vv-EAF" secondAttribute="trailing" constant="20" id="byX-L0-toZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eTg-Lu-jwd" secondAttribute="trailing" constant="10" id="dZ4-r8-KYt"/>
+                            <constraint firstItem="Rli-Xz-uSU" firstAttribute="top" secondItem="7T2-Vv-EAF" secondAttribute="bottom" constant="20" id="i1j-du-juE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXS-Ga-jcc" secondAttribute="trailing" constant="20" id="ihw-Cd-bVJ"/>
+                            <constraint firstItem="eTg-Lu-jwd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="jAT-op-Dio"/>
+                            <constraint firstItem="5GM-zg-oWu" firstAttribute="top" secondItem="lXS-Ga-jcc" secondAttribute="bottom" constant="30" id="jw1-sA-8MG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5GM-zg-oWu" secondAttribute="trailing" constant="30" id="t1c-UC-AD8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5GM-zg-oWu" secondAttribute="bottom" constant="20" id="ySf-qm-33M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="generationsLabel" destination="eTg-Lu-jwd" id="2fv-wV-g61"/>
+                        <outlet property="gridCollectionView" destination="7T2-Vv-EAF" id="9wU-Jp-gGe"/>
+                        <outlet property="presetFour" destination="4iD-dS-JZo" id="ENJ-Lt-hdH"/>
+                        <outlet property="presetOne" destination="0Tm-bS-yFG" id="Xe7-o4-4DK"/>
+                        <outlet property="presetThree" destination="kWb-nN-n2d" id="2Oi-aU-wAP"/>
+                        <outlet property="presetTwo" destination="M1f-B0-BWM" id="Ctn-bX-BLM"/>
+                        <outlet property="rulesButton" destination="RvG-DF-8KG" id="IOa-fv-33I"/>
+                        <outlet property="speedSegmentedControl" destination="lXS-Ga-jcc" id="dvQ-8l-Vaq"/>
+                        <outlet property="startButton" destination="7cw-AK-UWY" id="JjX-M3-mdh"/>
+                        <outlet property="stopButton" destination="ujr-PH-Z7g" id="qgp-Zh-nDj"/>
+                        <outlet property="trashButton" destination="Gf6-cr-ieA" id="MKS-ch-Fs5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="117"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="54b-Nv-9Za">
+            <objects>
+                <viewController id="vTk-rM-ZxI" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IMK-XM-5K6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g4q-L9-Nqk">
+                                <rect key="frame" x="25" y="191" width="364" height="597"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Rules:  Any live cell with two or three live neighbours survives.
+ Any dead cell with three live neighbours becomes a live cell.
+ All other live cells die in the next generation. Similarly, all other dead cells stay dead.</string>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conway's Game of Life" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7si-im-G4k">
+                                <rect key="frame" x="20" y="75" width="374" height="41"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="34"/>
+                                <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Htx-wL-FRI" firstAttribute="bottom" secondItem="g4q-L9-Nqk" secondAttribute="bottom" constant="20" id="2dC-Ux-hA7"/>
+                            <constraint firstItem="g4q-L9-Nqk" firstAttribute="top" secondItem="7si-im-G4k" secondAttribute="bottom" constant="75" id="PoA-4V-IJv"/>
+                            <constraint firstItem="7si-im-G4k" firstAttribute="top" secondItem="Htx-wL-FRI" secondAttribute="top" constant="75" id="QRe-YZ-Xz9"/>
+                            <constraint firstItem="Htx-wL-FRI" firstAttribute="trailing" secondItem="g4q-L9-Nqk" secondAttribute="trailing" constant="25" id="h7e-xy-gKR"/>
+                            <constraint firstItem="7si-im-G4k" firstAttribute="leading" secondItem="Htx-wL-FRI" secondAttribute="leading" constant="20" id="j0i-4T-MJ5"/>
+                            <constraint firstItem="Htx-wL-FRI" firstAttribute="trailing" secondItem="7si-im-G4k" secondAttribute="trailing" constant="20" id="qRU-ww-5WE"/>
+                            <constraint firstItem="g4q-L9-Nqk" firstAttribute="leading" secondItem="Htx-wL-FRI" secondAttribute="leading" constant="25" id="rVj-7m-Xhv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Htx-wL-FRI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ok6-bl-bwx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fO3-Cr-Mcm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1019" y="117"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="pause.circle" catalog="system" width="128" height="121"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
+        <image name="trash.circle" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
