@@ -73,6 +73,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         presetTwo.layer.cornerRadius = 10.0
         presetThree.layer.cornerRadius = 10.0
         presetFour.layer.cornerRadius = 10.0
+        speedSegmentedControl.tintColor = .white
     }
     
     func startGame() {
@@ -83,9 +84,38 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.stopButton.isEnabled = true
     }
     
+    func disableAllButPlay() {
+        game.stop()
+        presetOne.isEnabled = false
+        presetTwo.isEnabled = false
+        presetThree.isEnabled = false
+        presetFour.isEnabled = false
+        trashButton.isEnabled = false
+        rulesButton.isEnabled = false
+        stopButton.isEnabled = false
+        startButton.isEnabled = true
+    }
+    
+    func enableAll() {
+        presetOne.isEnabled = true
+        presetTwo.isEnabled = true
+        presetThree.isEnabled = true
+        presetFour.isEnabled = true
+        trashButton.isEnabled = true
+        rulesButton.isEnabled = true
+        stopButton.isEnabled = true
+        startButton.isEnabled = true
+    }
+    
+    func clearGenerations() {
+        generationsLabel.text = "0\nGenerations"
+        game.generation = 0
+    }
+    
     // MARK: - Actions
     
     @IBAction func rateOfPlayChanged(_ sender: UISegmentedControl) {
+        disableAllButPlay()
         if sender.selectedSegmentIndex == 0 {
             speed = 0.5
         } else if sender.selectedSegmentIndex == 1 {
@@ -96,30 +126,31 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @IBAction func presetOneTapped(_ sender: Any) {
+        clearGenerations()
+        disableAllButPlay()
         game.preset1()
-        startButton.isEnabled = false
-        stopButton.isEnabled = true
     }
     
     @IBAction func presetTwoTapped(_ sender: Any) {
+        clearGenerations()
+        disableAllButPlay()
         game.preset2()
-        startButton.isEnabled = false
-        stopButton.isEnabled = true
     }
     
     @IBAction func presetThreeTapped(_ sender: Any) {
+        clearGenerations()
+        disableAllButPlay()
         game.preset3()
-        startButton.isEnabled = false
-        stopButton.isEnabled = true
     }
     
     @IBAction func presetFourTapped(_ sender: Any) {
+        clearGenerations()
+        disableAllButPlay()
         game.preset4()
-        startButton.isEnabled = false
-        stopButton.isEnabled = true
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
+        enableAll()
         startGame()
     }
     

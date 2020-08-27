@@ -82,10 +82,10 @@ class Game {
     
     @discardableResult
     func generateInitialState() -> GameState {
-        let maxItems = width*height - 1
+        let maxItems = width * height - 1
         let initialStatePoints = self.generateRandom(between: 0...maxItems, count: maxItems/8)
 
-        for point in initialStatePoints{
+        for point in initialStatePoints {
             currentState[point] = Cell.makeLiveCell()
         }
         return self.currentState
@@ -120,21 +120,46 @@ class Game {
     // Methods that run preset configurations on the game board
     @discardableResult
     func preset1() -> GameState {
+        
+        for x in 0...624 {
+            currentState[x] = Cell.makeDeadCell()
+            if x % 2 == 0 {
+                currentState[x] = Cell.makeLiveCell()
+            }
+        }
         return self.currentState
     }
     
     @discardableResult
     func preset2() -> GameState {
+        for x in 0...624 {
+            currentState[x] = Cell.makeDeadCell()
+            if x % 5 == 0 {
+                currentState[x] = Cell.makeLiveCell()
+            }
+        }
         return self.currentState
     }
     
     @discardableResult
     func preset3() -> GameState {
+        for x in 0...624 {
+            currentState[x] = Cell.makeDeadCell()
+            if x % 8 == 0 {
+                currentState[x] = Cell.makeLiveCell()
+            }
+        }
         return self.currentState
     }
     
     @discardableResult
     func preset4() -> GameState {
+        for x in 0...624 {
+            currentState[x] = Cell.makeDeadCell()
+            if x % 100 == 0 {
+                currentState[x] = Cell.makeLiveCell()
+            }
+        }
         return self.currentState
     }
     
