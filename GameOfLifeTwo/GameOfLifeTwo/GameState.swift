@@ -21,10 +21,10 @@ struct GameState {
 }
 
 extension GameState: Equatable {
-    public static func == (left: GameState, right: GameState) -> Bool {
-        for leftCell in left.cells {
-            for rightCell in right.cells {
-                if leftCell.alive != rightCell.alive {
+    public static func == (lhs: GameState, rhs: GameState) -> Bool {
+        for leftCell in lhs.cells {
+            for rightCell in rhs.cells {
+                if leftCell.isAlive != rightCell.isAlive {
                     return false
                 }
             }
@@ -32,4 +32,3 @@ extension GameState: Equatable {
         return true
     }
 }
-

@@ -9,13 +9,13 @@
 import Foundation
 
 struct Cell {
-    var alive: Bool = false
+    var isAlive = false
     
-    static func newDeadCell() -> Cell {
-        return Cell(alive: false)
+    static func makeDeadCell() -> Cell {
+        return Cell(isAlive: false)
     }
     
-    static func newLivingCell() -> Cell {
-        return Cell(alive: true)
+    static func makeLiveCell() -> Cell {
+        return Cell(isAlive: true)
     }
 }

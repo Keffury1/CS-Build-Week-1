@@ -10,7 +10,7 @@ import UIKit
 
 class CellCollectionViewCell: UICollectionViewCell {
     
-    func configureWithState(alive: Bool) {
-        self.backgroundColor = alive ? UIColor.link : UIColor.red
+    func configureWithState(_ isAlive: Bool) {
+        self.backgroundColor = isAlive ?  .link : .white
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37FA57BE24F6ED3500D3394D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA57BD24F6ED3500D3394D /* Game.swift */; };
 		37FA57C024F6ED3E00D3394D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA57BF24F6ED3E00D3394D /* Cell.swift */; };
+		37FA57CB24F7311A00D3394D /* GameOfLifeTwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FA57CA24F7311A00D3394D /* GameOfLifeTwoTests.swift */; };
 		37FC57DD24F6EA3C00610C60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57DC24F6EA3C00610C60 /* AppDelegate.swift */; };
 		37FC57DF24F6EA3C00610C60 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57DE24F6EA3C00610C60 /* SceneDelegate.swift */; };
 		37FC57E124F6EA3C00610C60 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57E024F6EA3C00610C60 /* MainViewController.swift */; };
@@ -19,9 +20,22 @@
 		37FC57FA24F6ECF200610C60 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FC57F924F6ECF200610C60 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		37FA57CD24F7311A00D3394D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37FC57D124F6EA3C00610C60 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37FC57D824F6EA3C00610C60;
+			remoteInfo = GameOfLifeTwo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		37FA57BD24F6ED3500D3394D /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		37FA57BF24F6ED3E00D3394D /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		37FA57C824F7311A00D3394D /* GameOfLifeTwoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameOfLifeTwoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37FA57CA24F7311A00D3394D /* GameOfLifeTwoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfLifeTwoTests.swift; sourceTree = "<group>"; };
+		37FA57CC24F7311A00D3394D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37FC57D924F6EA3C00610C60 /* GameOfLifeTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfLifeTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37FC57DC24F6EA3C00610C60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37FC57DE24F6EA3C00610C60 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +49,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		37FA57C524F7311A00D3394D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37FC57D624F6EA3C00610C60 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +66,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37FA57C924F7311A00D3394D /* GameOfLifeTwoTests */ = {
+			isa = PBXGroup;
+			children = (
+				37FA57CA24F7311A00D3394D /* GameOfLifeTwoTests.swift */,
+				37FA57CC24F7311A00D3394D /* Info.plist */,
+			);
+			path = GameOfLifeTwoTests;
+			sourceTree = "<group>";
+		};
 		37FC57D024F6EA3C00610C60 = {
 			isa = PBXGroup;
 			children = (
 				37FC57DB24F6EA3C00610C60 /* GameOfLifeTwo */,
+				37FA57C924F7311A00D3394D /* GameOfLifeTwoTests */,
 				37FC57DA24F6EA3C00610C60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				37FC57D924F6EA3C00610C60 /* GameOfLifeTwo.app */,
+				37FA57C824F7311A00D3394D /* GameOfLifeTwoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +162,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		37FA57C724F7311A00D3394D /* GameOfLifeTwoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37FA57CF24F7311A00D3394D /* Build configuration list for PBXNativeTarget "GameOfLifeTwoTests" */;
+			buildPhases = (
+				37FA57C424F7311A00D3394D /* Sources */,
+				37FA57C524F7311A00D3394D /* Frameworks */,
+				37FA57C624F7311A00D3394D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37FA57CE24F7311A00D3394D /* PBXTargetDependency */,
+			);
+			name = GameOfLifeTwoTests;
+			productName = GameOfLifeTwoTests;
+			productReference = 37FA57C824F7311A00D3394D /* GameOfLifeTwoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		37FC57D824F6EA3C00610C60 /* GameOfLifeTwo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 37FC57ED24F6EA4400610C60 /* Build configuration list for PBXNativeTarget "GameOfLifeTwo" */;
@@ -157,6 +207,10 @@
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Bobby Keffury";
 				TargetAttributes = {
+					37FA57C724F7311A00D3394D = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 37FC57D824F6EA3C00610C60;
+					};
 					37FC57D824F6EA3C00610C60 = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -176,11 +230,19 @@
 			projectRoot = "";
 			targets = (
 				37FC57D824F6EA3C00610C60 /* GameOfLifeTwo */,
+				37FA57C724F7311A00D3394D /* GameOfLifeTwoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		37FA57C624F7311A00D3394D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37FC57D724F6EA3C00610C60 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +256,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		37FA57C424F7311A00D3394D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37FA57CB24F7311A00D3394D /* GameOfLifeTwoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		37FC57D524F6EA3C00610C60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -209,6 +279,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37FA57CE24F7311A00D3394D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37FC57D824F6EA3C00610C60 /* GameOfLifeTwo */;
+			targetProxy = 37FA57CD24F7311A00D3394D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		37FC57E224F6EA3C00610C60 /* Main.storyboard */ = {
@@ -230,6 +308,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		37FA57D024F7311A00D3394D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFT6PV3RZ7;
+				INFOPLIST_FILE = GameOfLifeTwoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BobbyKeffury.GameOfLifeTwoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameOfLifeTwo.app/GameOfLifeTwo";
+			};
+			name = Debug;
+		};
+		37FA57D124F7311A00D3394D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TFT6PV3RZ7;
+				INFOPLIST_FILE = GameOfLifeTwoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.BobbyKeffury.GameOfLifeTwoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameOfLifeTwo.app/GameOfLifeTwo";
+			};
+			name = Release;
+		};
 		37FC57EB24F6EA4400610C60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -280,7 +398,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -334,7 +452,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -383,6 +501,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		37FA57CF24F7311A00D3394D /* Build configuration list for PBXNativeTarget "GameOfLifeTwoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37FA57D024F7311A00D3394D /* Debug */,
+				37FA57D124F7311A00D3394D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		37FC57D424F6EA3C00610C60 /* Build configuration list for PBXProject "GameOfLifeTwo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

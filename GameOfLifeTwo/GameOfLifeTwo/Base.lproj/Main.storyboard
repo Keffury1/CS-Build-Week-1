@@ -17,15 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Generations" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTg-Lu-jwd">
-                                <rect key="frame" x="20" y="74" width="384" height="82"/>
+                                <rect key="frame" x="20" y="54" width="384" height="82"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7T2-Vv-EAF">
-                                <rect key="frame" x="20" y="164" width="374" height="367"/>
+                                <rect key="frame" x="20" y="144" width="374" height="434"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FVo-NQ-RSe">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="7" minimumInteritemSpacing="5" id="FVo-NQ-RSe">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -43,7 +43,7 @@
                                 </cells>
                             </collectionView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5GM-zg-oWu">
-                                <rect key="frame" x="30" y="767" width="354" height="75"/>
+                                <rect key="frame" x="30" y="779" width="354" height="75"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvG-DF-8KG">
                                         <rect key="frame" x="0.0" y="0.5" width="73.5" height="74"/>
@@ -85,10 +85,10 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rli-Xz-uSU">
-                                <rect key="frame" x="20" y="551" width="374" height="125"/>
+                                <rect key="frame" x="20" y="588" width="374" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tm-bS-yFG">
-                                        <rect key="frame" x="0.0" y="0.0" width="86" height="125"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="86" height="100"/>
                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -98,7 +98,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1f-B0-BWM">
-                                        <rect key="frame" x="96" y="0.0" width="86" height="125"/>
+                                        <rect key="frame" x="96" y="0.0" width="86" height="100"/>
                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -108,7 +108,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kWb-nN-n2d">
-                                        <rect key="frame" x="192" y="0.0" width="86" height="125"/>
+                                        <rect key="frame" x="192" y="0.0" width="86" height="100"/>
                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -118,7 +118,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iD-dS-JZo">
-                                        <rect key="frame" x="288" y="0.0" width="86" height="125"/>
+                                        <rect key="frame" x="288" y="0.0" width="86" height="100"/>
                                         <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,11 +129,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="125" id="d9D-l2-gnj"/>
+                                    <constraint firstAttribute="height" constant="100" id="d9D-l2-gnj"/>
                                 </constraints>
                             </stackView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lXS-Ga-jcc">
-                                <rect key="frame" x="20" y="706" width="374" height="32"/>
+                                <rect key="frame" x="20" y="718" width="374" height="32"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <segments>
                                     <segment title="Slow"/>
@@ -158,12 +158,12 @@
                             <constraint firstItem="eTg-Lu-jwd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="V5g-3Z-Zw0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7T2-Vv-EAF" secondAttribute="trailing" constant="20" id="byX-L0-toZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eTg-Lu-jwd" secondAttribute="trailing" constant="10" id="dZ4-r8-KYt"/>
-                            <constraint firstItem="Rli-Xz-uSU" firstAttribute="top" secondItem="7T2-Vv-EAF" secondAttribute="bottom" constant="20" id="i1j-du-juE"/>
+                            <constraint firstItem="Rli-Xz-uSU" firstAttribute="top" secondItem="7T2-Vv-EAF" secondAttribute="bottom" constant="10" id="i1j-du-juE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lXS-Ga-jcc" secondAttribute="trailing" constant="20" id="ihw-Cd-bVJ"/>
-                            <constraint firstItem="eTg-Lu-jwd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="jAT-op-Dio"/>
+                            <constraint firstItem="eTg-Lu-jwd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="jAT-op-Dio"/>
                             <constraint firstItem="5GM-zg-oWu" firstAttribute="top" secondItem="lXS-Ga-jcc" secondAttribute="bottom" constant="30" id="jw1-sA-8MG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5GM-zg-oWu" secondAttribute="trailing" constant="30" id="t1c-UC-AD8"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5GM-zg-oWu" secondAttribute="bottom" constant="20" id="ySf-qm-33M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5GM-zg-oWu" secondAttribute="bottom" constant="8" id="ySf-qm-33M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

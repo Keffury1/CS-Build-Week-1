@@ -14,7 +14,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var cells: [Cell] = []
     var game: Game!
-    var speed: Float = 0.1
+    var speed: Float = 1.0
+    var width = 25
+    var height = 25
     
     // MARK: - Outlets
     
@@ -38,7 +40,7 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         gridCollectionView.dataSource = self
         gridCollectionView.delegate = self
         setupSubviews()
-        self.game = Game(width: 25, height: 25)
+        game = Game(width: width, height: height)
     }
     
     // MARK: - Collection View Methods
@@ -48,8 +50,9 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCell", for: indexPath) as? CellCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureWithState(alive: cells[indexPath.row].alive)
+        collectionView.register(CellCollectionViewCell.self, forCellWithReuseIdentifier: "cellCell")
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellCell", for: indexPath) as! CellCollectionViewCell
+        cell.configureWithState(cells[indexPath.item].isAlive)
         return cell
     }
     
@@ -72,6 +75,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         presetFour.layer.cornerRadius = 10.0
     }
     
+    func startGame() {
+        game.addStateObserver(speed: speed) { [weak self] state in
+            self?.display(state)
+        }
+        self.startButton.isEnabled = false
+        self.stopButton.isEnabled = true
+    }
+    
     // MARK: - Actions
     
     @IBAction func rateOfPlayChanged(_ sender: UISegmentedControl) {
@@ -86,30 +97,33 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBAction func presetOneTapped(_ sender: Any) {
         game.preset1()
+        startButton.isEnabled = false
+        stopButton.isEnabled = true
     }
     
     @IBAction func presetTwoTapped(_ sender: Any) {
         game.preset2()
+        startButton.isEnabled = false
+        stopButton.isEnabled = true
     }
     
     @IBAction func presetThreeTapped(_ sender: Any) {
         game.preset3()
+        startButton.isEnabled = false
+        stopButton.isEnabled = true
     }
     
     @IBAction func presetFourTapped(_ sender: Any) {
         game.preset4()
+        startButton.isEnabled = false
+        stopButton.isEnabled = true
     }
     
     @IBAction func startButtonTapped(_ sender: Any) {
-        game.addStateObserver(speed: speed) { [weak self] state in
-            self?.display(state)
-        }
-        self.startButton.isEnabled = false
-        self.stopButton.isEnabled = true
+        startGame()
     }
     
     @IBAction func stopButtonTapped(_ sender: Any) {
-        game.removeStateObserver()
         game.stop()
         self.startButton.isEnabled = true
         self.stopButton.isEnabled = false
@@ -120,6 +134,8 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
         cells.removeAll()
         gridCollectionView.reloadData()
         generationsLabel.text = "0\nGenerations"
+        self.startButton.isEnabled = true
+        self.stopButton.isEnabled = false
     }
 }
 
