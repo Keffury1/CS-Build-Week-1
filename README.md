@@ -7,7 +7,6 @@ aspects of computer science and nature.
 
 [from Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Examples_of_patterns)
 
-![example-patterns](https://media.giphy.com/media/4VVZTvTqzRR0BUwNIH/giphy.gif)
 
 ## Rules
 
